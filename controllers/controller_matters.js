@@ -1,5 +1,5 @@
 const Matter = require("../models/matter");
-
+const Student = require("../models/student");
 const getMatters = async (req, res, next) => {
   try {
     const result = await Matter.find({});

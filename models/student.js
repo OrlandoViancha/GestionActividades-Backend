@@ -7,11 +7,16 @@ const student = new Schema({
     type: String,
     required: true,
   },
-  activities: [
-    {
+  activities: [{
+    id: {
       type: Schema.Types.ObjectId,
       ref: "activity",
     },
+    qualification: {
+      type: Number,
+      required: true,
+    }
+  }
   ],
   matters: [
     {

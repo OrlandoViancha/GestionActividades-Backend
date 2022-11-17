@@ -8,4 +8,17 @@ const addStudent=async(req,res,next)=>{
     res.sendStatus(200);
 }
 
-module.exports = {addStudent};
+const getStudent = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const student = await Student.findById(id);
+        res.send(student);
+    } catch (error) {
+        res.sendStatus(500);
+    }
+    
+    
+    
+}
+
+module.exports = {addStudent,getStudent};
